@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Reviews - Abativan</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .page-container {
+        width: 90%;
+        max-width: 900px;
+        margin: 40px auto;
+      }
+
+      .page-title {
+        font-size: 28px;
+        color: #0a2a43; /* Dark blue like AMSVans */
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      /* Review Cards */
+      .review-card {
+        margin-bottom: 25px;
+        padding: 15px;
+        border-left: 4px solid #0a2a43;
+        background: #f5f7fa;
+      }
+
+      .review-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      /* Help Items */
+      .help-item {
+        margin-bottom: 20px;
+      }
+
+      .help-question {
+        font-size: 18px;
+        font-weight: bold;
+        color: #0a2a43;
+      }
+
+      /* Trade-In Form */
+      .trade-form label {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      .trade-form input,
+      .trade-form select,
+      .trade-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .btn-primary {
+        margin-top: 20px;
+        padding: 12px 20px;
+        border: none;
+        background: #0a2a43;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <header id="navbar"></header>
+
+    <main class="page-container">
+      <h1 class="page-title">Customer Reviews</h1>
+
+      <!-- Review 1 -->
+      <div class="review-card">
+        <h3 class="review-name">John D.</h3>
+        <p class="review-text">
+          Excellent service and very reliable van. Smooth process from start to
+          finish.
+        </p>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <h3 class="review-name">Sarah K.</h3>
+        <p class="review-text">
+          The team was very helpful. The van was exactly as described and in
+          great condition.
+        </p>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <h3 class="review-name">Michael T.</h3>
+        <p class="review-text">
+          Affordable, clean, and well-maintained vehicles. Highly recommend
+          Abativan.
+        </p>
+      </div>
+    </main>
+
+    <script src="navbar.js"></script>
+  </body>
+</html>

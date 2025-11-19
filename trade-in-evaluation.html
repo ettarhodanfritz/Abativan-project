@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trade-In Evaluation - Abativan</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .page-container {
+        width: 90%;
+        max-width: 900px;
+        margin: 40px auto;
+      }
+
+      .page-title {
+        font-size: 28px;
+        color: #0a2a43; /* Dark blue like AMSVans */
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      /* Review Cards */
+      .review-card {
+        margin-bottom: 25px;
+        padding: 15px;
+        border-left: 4px solid #0a2a43;
+        background: #f5f7fa;
+      }
+
+      .review-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      /* Help Items */
+      .help-item {
+        margin-bottom: 20px;
+      }
+
+      .help-question {
+        font-size: 18px;
+        font-weight: bold;
+        color: #0a2a43;
+      }
+
+      /* Trade-In Form */
+      .trade-form label {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      .trade-form input,
+      .trade-form select,
+      .trade-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .btn-primary {
+        margin-top: 20px;
+        padding: 12px 20px;
+        border: none;
+        background: #0a2a43;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header id="navbar"></header>
+
+    <main class="page-container">
+      <h1 class="page-title">Trade-In Evaluation</h1>
+
+      <p>
+        Please provide the details of your current vehicle to receive an
+        estimated trade-in value.
+      </p>
+
+      <form class="trade-form">
+        <label>Vehicle Make</label>
+        <input type="text" placeholder="e.g. Toyota" />
+
+        <label>Vehicle Model</label>
+        <input type="text" placeholder="e.g. Sienna" />
+
+        <label>Year</label>
+        <input type="number" placeholder="e.g. 2018" />
+
+        <label>Mileage</label>
+        <input type="number" placeholder="e.g. 45,000" />
+
+        <label>Condition</label>
+        <select>
+          <option>Excellent</option>
+          <option>Good</option>
+          <option>Fair</option>
+          <option>Poor</option>
+        </select>
+
+        <label>Additional Notes</label>
+        <textarea placeholder="Describe any issues or upgrades"></textarea>
+
+        <button type="submit" class="btn-primary">Get Evaluation</button>
+      </form>
+    </main>
+
+    <script src="navbar.js"></script>
+  </body>
+</html>

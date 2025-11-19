@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Info - Abativan</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      .request-info-page {
+        max-width: 700px;
+        margin: 50px auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        color: #333;
+      }
+
+      .request-info-container h1 {
+        color: #3a4859;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      .request-info-container p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        text-align: left;
+      }
+
+      .request-info-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+
+      .request-info-form input,
+      .request-info-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: inherit;
+      }
+
+      .request-info-form button {
+        background-color: #3a4859;
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .request-info-form button:hover {
+        background-color: #357abd;
+      }
+
+      .info-note {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* ======= Request Info Page Responsive ======= */
+      @media (max-width: 768px) {
+        .request-info-page {
+          margin: 30px 15px;
+          padding: 15px;
+        }
+        .request-info-container h1 {
+          font-size: 24px;
+        }
+        .request-info-form input,
+        .request-info-form textarea {
+          font-size: 14px;
+          padding: 8px;
+        }
+        .request-info-form button {
+          width: 100%;
+          padding: 10px;
+          font-size: 14px;
+        }
+        .info-note {
+          font-size: 13px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .request-info-page {
+          margin: 20px 10px;
+          padding: 10px;
+        }
+        .request-info-container h1 {
+          font-size: 20px;
+        }
+        .request-info-form input,
+        .request-info-form textarea {
+          font-size: 13px;
+          padding: 6px;
+        }
+        .request-info-form button {
+          font-size: 13px;
+          padding: 8px;
+        }
+        .info-note {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="request-info-page">
+      <section class="request-info-container">
+        <h1>Request More Information</h1>
+        <p>
+          Thank you for your interest in our vehicles. Please provide your
+          details below and our team will contact you shortly.
+        </p>
+
+        <form class="request-info-form">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          />
+
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="(123) 456-7890"
+          />
+
+          <label for="vehicle">Vehicle of Interest</label>
+          <input
+            type="text"
+            id="vehicle"
+            name="vehicle"
+            placeholder="e.g., 2024 Ford Transit 150"
+            required
+          />
+
+          <label for="message">Additional Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Any questions or details"
+          ></textarea>
+
+          <button type="submit" class="btn-primary">Submit Request</button>
+        </form>
+
+        <p class="info-note">
+          Our team will reach out within 24-48 hours. Thank you for choosing
+          Abativan!
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

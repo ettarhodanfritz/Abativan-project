@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Van Details</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* RESET */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      /* FLEX LAYOUT TO STICK FOOTER */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* full viewport height */
+      }
+
+      main {
+        flex: 1; /* main grows to push footer down */
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* HEADER */
+      .van-header {
+        text-align: center;
+        padding: 30px 20px;
+        background-color: #f9f9f9;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .van-header h1 {
+        font-size: 2rem;
+        color: #3a4859;
+        margin-bottom: 10px;
+      }
+
+      .van-header p {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      .van-header .van-price {
+        margin-top: 12px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #e53935;
+      }
+
+      .contact-btn {
+        margin-top: 15px;
+        padding: 12px 25px;
+        display: inline-block;
+        background-color: #3a4859;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      /* VAN CONTAINER */
+      .van-container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+        flex: 1 0 auto; /* ensures main expands even if JS hasn't loaded content yet */
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .van-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      .van-image {
+        flex: 1 1 400px;
+        text-align: center;
+      }
+
+      .van-image img {
+        width: auto;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .van-info {
+        flex: 1 1 400px;
+      }
+
+      .van-info h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #3a4859;
+      }
+
+      .van-info p {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .back-btn {
+        display: inline-block;
+        margin: 20px auto;
+        padding: 12px 20px;
+        background-color: #3a4859;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #3a4859;
+        color: white;
+        padding: 30px 20px 10px;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: space-between;
+      }
+
+      .footer-content a {
+        color: #ddd;
+        text-decoration: none;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #444;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 900px) {
+        .van-details {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .van-info {
+          text-align: center;
+        }
+
+        .contact-btn,
+        .back-btn {
+          width: 100%;
+          padding: 14px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .van-container {
+          width: 100%;
+          padding: 15px;
+        }
+
+        .van-image img {
+          max-width: 100%;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="van-header">
+      <h1 id="van-name">Van Name</h1>
+      <p id="van-subtitle">Year | Model | Key Feature</p>
+      <p id="van-description">Short description goes here</p>
+      <p class="van-price" id="van-price">$Price</p>
+      <a href="contact.html" class="contact-btn">Contact Us</a>
+    </header>
+
+    <div style="text-align: center">
+      <a href="inventory.html" class="back-btn">Back to Inventory</a>
+    </div>
+
+    <main>
+      <div class="van-container" id="van-container"></div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>Abativan</h4>
+          <p>Your trusted source for quality accessible vehicles.</p>
+        </div>
+        <div class="footer-about">
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:info@abativan.com">info@abativan.com</a></p>
+          <p>Phone: +1 315 320 6153</p>
+          <p>
+            Address: 3600 W Henrietta Rd, Rochester, NY 14623, United States
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-info">
+          <h4>Customer Support</h4>
+          <ul>
+            <li><a href="reviews.html" target="_blank">Customer Reviews</a></li>
+            <li><a href="help-center.html" target="_blank">Help Center</a></li>
+            <li>
+              <a href="trade-in-evaluation.html" target="_blank"
+                >Trade-In Evaluation</a
+              >
+            </li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Abativan. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/van-details.js"></script>
+  </body>
+</html>

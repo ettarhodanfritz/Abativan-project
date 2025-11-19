@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abativan Inventory</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Inventory filters */
+      .inventory-filters {
+        background-color: #fff;
+        padding: 15px 20px;
+        display: flex;
+        gap: 20px;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .inventory-intro {
+        text-align: center;
+        margin: 20px auto;
+        max-width: 800px;
+        font-size: 16px;
+        color: #555;
+      }
+
+      .inventory-stats {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .inventory-stats .stat h3 {
+        font-size: 28px;
+        color: #3a4859;
+        margin-bottom: 5px;
+      }
+
+      .inventory-stats .stat p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      .filter-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .filter-group label {
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .filter-group select,
+      .filter-group input {
+        padding: 6px 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .btn-apply {
+        margin-top: 20px;
+        height: 35px;
+      }
+      /* Inventory grid - Desktop */
+      .inventory-grid {
+        padding: 20px;
+      }
+
+      .inventory-grid .cards {
+        display: flex; /* flexbox like homepage */
+        flex-wrap: wrap; /* allow wrapping */
+        gap: 20px; /* space between cards */
+        justify-content: center; /* center all cards horizontally */
+      }
+
+      .inventory-grid .cards > * {
+        width: 250px; /* fixed width like homepage cards */
+        max-width: 100%; /* responsive if screen is smaller */
+        margin: 0 auto; /* center each card individually */
+      }
+      /* Pagination */
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px 0;
+      }
+
+      .pagination button {
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .pagination button.active {
+        background-color: #4a90e2;
+        color: #fff;
+        border-color: #4a90e2;
+      }
+
+      .inventory-info {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 10px;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #555;
+        text-align: left !important; /* force left alignment */
+      }
+
+      .inventory-info h2 {
+        color: #3a4859;
+        margin-bottom: 20px;
+        text-align: left !important; /* left aligned */
+      }
+
+      .inventory-info h3 {
+        color: #3a4859;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        text-align: left !important; /* left aligned */
+      }
+
+      .inventory-info p {
+        margin-bottom: 15px;
+      }
+      .breadcrumb h2 {
+        color: #3a4859;
+      }
+
+      /* ======= Inventory Responsive ======= */
+      @media (max-width: 1024px) {
+        .inventory-filters {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 15px;
+        }
+        .filter-group {
+          width: 100%;
+        }
+        .btn-apply {
+          width: 100%;
+          margin-top: 10px;
+        }
+        .inventory-stats {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .inventory-grid .cards {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+        .inventory-info {
+          padding: 10px 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        nav {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .inventory-filters {
+          padding: 10px;
+          gap: 10px;
+        }
+
+        .inventory-grid .cards {
+          grid-template-columns: 1fr; /* single column mobile */
+          gap: 20px;
+          justify-items: center;
+        }
+
+        .inventory-grid .cards > * {
+          width: 90%; /* narrower for mobile */
+          max-width: 300px;
+          margin: 0 auto;
+        }
+
+        .inventory-info h2,
+        .inventory-info h3 {
+          font-size: 18px;
+        }
+        .inventory-info p {
+          font-size: 14px;
+        }
+        .pagination button {
+          padding: 5px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">
+        <a href="index.html"
+          ><img src="images/logo abativan.jpg" alt="Abativan Logo"
+        /></a>
+      </div>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+
+        <li class="dropdown">
+          <a href="#">Pages</a>
+          <ul class="dropdown-menu">
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="newsletter.html">Newsletter</a></li>
+            <li><a href="best-selling.html">Best Selling Products</a></li>
+            <li><a href="on-sale.html">On Sale Products</a></li>
+            <li><a href="top-rated.html">Top Rated Products</a></li>
+            <li><a href="recently-viewed.html">Recently Viewed Products</a></li>
+
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="refund-returns.html">Refund & Returns Policy</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Breadcrumb / Page Title -->
+    <section class="breadcrumb">
+      <h2>Inventory</h2>
+    </section>
+    <section class="inventory-intro">
+      <p>
+        Explore our wide selection of certified accessible vans. Use the filters
+        below to quickly find the perfect vehicle that fits your needs, budget,
+        and style.
+      </p>
+    </section>
+
+    <section class="inventory-stats">
+      <div class="stat">
+        <h3>100+</h3>
+        <p>Vans in Stock</p>
+      </div>
+      <div class="stat">
+        <h3>50+</h3>
+        <p>Certified Accessible Vans</p>
+      </div>
+      <div class="stat">
+        <h3>5,000+</h3>
+        <p>Happy Customers</p>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="inventory-filters">
+      <div class="filter-group">
+        <label for="colorFilter">Color</label>
+        <select id="colorFilter">
+          <option value="all">All</option>
+          <option value="White">White</option>
+          <option value="Black">Black</option>
+          <option value="Blue">Blue</option>
+          <option value="Grey">Grey</option>
+          <option value="Silver">Silver</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="maxPrice">Max Price</label>
+        <input type="number" id="maxPrice" placeholder="e.g 70000" />
+      </div>
+
+      <div class="filter-group">
+        <label for="yearFilter">Year</label>
+        <select id="yearFilter">
+          <option value="all">All</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="modelFilter">Model</label>
+        <select id="modelFilter">
+          <option value="all">All</option>
+          <option value="Transit">Transit</option>
+          <option value="Sienna">Sienna</option>
+          <option value="Pacifica">Pacifica</option>
+          <option value="Odyssey">Odyssey</option>
+        </select>
+      </div>
+
+      <button id="applyFilter" class="btn-primary btn-apply">
+        Apply Filters
+      </button>
+    </section>
+
+    <!-- Inventory Grid -->
+    <section class="inventory-grid">
+      <div class="cards" id="inventory-container">
+        <!-- Van cards will render here -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="pagination">
+        <!-- Page buttons dynamically generated -->
+      </div>
+    </section>
+
+    <!-- Inventory Info Section -->
+    <section class="inventory-info">
+      <h2>Wheelchair Accessible Vans, The Best Way To Buy Vehicles</h2>
+
+      <p>
+        AMS Vans is the best place to purchase a wheelchair accessible van. A
+        mobility van can be life-changing, so we treat every wheelchair user,
+        their loved ones or caregiver like we’d treat our own family—with fair
+        prices, quality mobility products, and consistently excellent service.
+        We have a wide range of conversions on popular vans such as Toyota
+        Sienna, Honda Odyssey, Chrysler Pacifica and Voyager, Ford Transit, and
+        RAM Promaster, with a range of wheelchair van conversion types: rear
+        entry wheelchair vans, side entry wheelchair vans, commercial wheelchair
+        vans, and both power or manual ramp types.
+      </p>
+
+      <p>
+        It's because of the wheelchair accessible vehicle purchase experience
+        we’ve provided for decades that we’ve been blessed to serve over 17,000
+        customers across the entire country, and continue to serve wheelchair
+        users in any zip code.
+      </p>
+
+      <h3>
+        The Industry’s Best Prices and Lowest Rates for Wheelchair Accessible
+        Vans
+      </h3>
+      <p>
+        Wheelchair van financing shouldn't be daunting or complicated for
+        wheelchair users or their families/loved ones/caregivers. We make
+        financing a wheelchair van easy with our in-house services. We
+        collaborate with several banks and can cater to a wide range of credit
+        scores. Our low prices mixed with low rates make a monthly payment more
+        affordable, which makes wheelchair accessible van financing a
+        possibility for more families. If you see a wheelchair van for sale in
+        our inventory, simply click "request info" and you can talk about our
+        unique handicap van financing abilities.
+      </p>
+
+      <h3>Wheelchair Accessible Van Conversions</h3>
+      <p>
+        Wheelchair accessible vehicles are converted by different conversion
+        brands. As a Vantage Mobility-owned company, new AMS Vans wheelchair
+        vans are built by Vantage Mobility, a top-of-the-line wheelchair van
+        conversion facility with over 30 years of reputable history. The Vantage
+        Mobility facility is "Toyota Gold Quality" certified and works
+        extensively with Toyota to ensure the products built meet their
+        incredibly high standards and manufacturing practices. View the recently
+        launched Toyota Sienna hybrid wheelchair van.
+      </p>
+
+      <p>
+        We carry ample used and pre-owned wheelchair van inventory from other
+        brands that we took on trade and reconditioned to be up to our
+        industry-leading standards. With both used and brand-new inventory, you
+        have a wide selection of options in our inventory to meet your family's
+        unique needs.
+      </p>
+
+      <h3>Used vs. New Accessible Vehicles</h3>
+      <p>
+        Wheelchair vans are more expensive than vehicles that have not been
+        converted to be accessible, so you can save a good deal of money buying
+        a pre-owned wheelchair van. Many customers with disabilities find that
+        buying a used or pre-owned van helps them to afford what they need and
+        still get a vehicle that is reliable and durable for years to come, and
+        which gives them a lot of their independence back. With used accessible
+        vans comes savings, there is a middle tier for pre-owned handicap ready
+        vans that are built with new conversions. Higher priced models are
+        generally both new vehicles with new conversions.
+      </p>
+
+      <p>
+        To make it easier to afford the wheelchair accessible van you need, we
+        offer financing and also accept trade-ins towards pre-owned vans. With a
+        wide variety of both new and used wheelchair vans for sale at a fair
+        price in our large inventory, AMS Vans makes it easy to find the van
+        with the exact mix of features you need at the best price.
+      </p>
+
+      <h3>The Convenience of Online or In-Person</h3>
+      <p>
+        Deciding on purchasing a conversion online or in-person is important,
+        and depends on a variety of factors. Any wheelchair accessible vehicle
+        conversion in stock is available to be purchased either online or
+        in-person. For those who prefer to make their vehicle purchase online,
+        we make it easy to explore our inventory and have confidence that you
+        know exactly what you're getting.
+      </p>
+
+      <p>
+        You should not have to call for a price. That's a tactic meant to get
+        you on the phone. In our inventory, if it's in stock, the price is
+        there. We also share mileage, extensive pictures, free Carfax report,
+        and even an interactive, 360-degree vehicle viewing experience. So, when
+        the wheelchair van is delivered at your home, there won't be any
+        condition-related surprises. In the unlikely case that the condition of
+        your handicap van is poor, you have the ability to refuse it at delivery
+        for a full refund.
+      </p>
+
+      <p>
+        If you like the option to visit local dealers to shop wheelchair
+        accessible vehicles in person and test drive, we have several locations
+        across the country ready to give you that in-person experience. We love
+        to connect with customers virtually or face-to-face, in a way that is
+        the most beneficial to them.
+      </p>
+
+      <p>
+        So, whether for independent drivers (drive from wheelchair with hand
+        controls) or caregivers, you have a way to buy the way you want, knowing
+        that either way, our budget-friendly accessible vehicles can be
+        extensively viewed virtually or in person.
+      </p>
+
+      <h3>Service Maintenance</h3>
+      <p>
+        You have to maintain your handicap accessible van well for it to last a
+        long time. These vans often require special maintenance in addition to
+        the oil changes, new tires and other work that all vehicles need from
+        time to time. We can advise you on how to maintain your van so that it
+        gives you years worth of great driving, whether you're a disabled person
+        who will be driving alone or a family member who will be transporting a
+        relative who uses a wheelchair.
+      </p>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>Abativan</h4>
+          <p>Your trusted source for quality accessible vehicles.</p>
+        </div>
+        <div class="footer-about">
+          <h3>Contact</h3>
+
+          <p>Email: <a href="mailto:info@abativan.com">info@abativan.com</a></p>
+          <p>Phone: +1 315 320 6153</p>
+          <p>
+            Address: 3600 W Henrietta Rd, Rochester, NY 14623, United States
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-info">
+          <h4>Customer Support</h4>
+          <ul>
+            <li>
+              <a href="reviews.html" target="_blank">Customer Reviews</a>
+            </li>
+            <li><a href="help-center.html" target="_blank">Help Center</a></li>
+            <li>
+              <a href="trade-in-evaluation.html" target="_blank"
+                >Trade-In Evaluation</a
+              >
+            </li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Abativan. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
