@@ -3,14 +3,14 @@ import smtplib
 from email.mime.text import MIMEText
 
 app = Flask(__name__)
-app.secret_key = "replace_with_a_secret_key"  # Needed for flash messages
+app.secret_key = "replace_with_a_secret_key" 
 
 # ----------------------------
 # Email Configuration
 # ----------------------------
-EMAIL_ADDRESS = "rhodanfritz@gmail.com"         # Your Gmail
-EMAIL_PASSWORD = "rkbwrwcsppfyncqo"             # Gmail App Password
-RECIPIENT_EMAIL = "rhodanfritz@gmail.com"       # Destination email
+EMAIL_ADDRESS = "rhodanfritz@gmail.com"       
+EMAIL_PASSWORD = "rkbwrwcsppfyncqo"            
+RECIPIENT_EMAIL = "rhodanfritz@gmail.com"       
 
 def send_email(subject, body, recipient=RECIPIENT_EMAIL):
     msg = MIMEText(body)
@@ -23,16 +23,10 @@ def send_email(subject, body, recipient=RECIPIENT_EMAIL):
         server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         server.send_message(msg)
 
-# ----------------------------
-# Home Route
-# ----------------------------
 @app.route("/")
 def home():
     return "<h1>Abativan Backend Running</h1><p>Use your forms to submit requests.</p>"
 
-# ----------------------------
-# Request Info Route
-# ----------------------------
 @app.route("/request-info", methods=["POST"])
 def request_info():
     name = request.form.get("name")
@@ -57,9 +51,6 @@ Message:
     flash("Request submitted successfully!", "success")
     return redirect(request.referrer)
 
-# ----------------------------
-# Newsletter Route
-# ----------------------------
 @app.route("/subscribe", methods=["POST"])
 def subscribe():
     email = request.form.get("email")
@@ -72,9 +63,7 @@ def subscribe():
     flash("Subscribed successfully!", "success")
     return redirect(request.referrer)
 
-# ----------------------------
-# Contact Form Route
-# ----------------------------
+
 @app.route("/contact", methods=["POST"])
 def contact():
     name = request.form.get("name")
@@ -97,8 +86,6 @@ Message:
     flash("Message sent successfully!", "success")
     return redirect(request.referrer)
 
-# ----------------------------
-# Run Flask App
-# ----------------------------
+
 if __name__ == "__main__":
     app.run(debug=True)

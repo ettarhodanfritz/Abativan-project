@@ -6,7 +6,6 @@
     <title>Van Details</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-      /* RESET */
       * {
         margin: 0;
         padding: 0;
@@ -21,20 +20,17 @@
         color: #333;
       }
 
-      /* FLEX LAYOUT TO STICK FOOTER */
       body {
         display: flex;
         flex-direction: column;
-        min-height: 100vh; /* full viewport height */
+        min-height: 100vh;
       }
 
       main {
-        flex: 1; /* main grows to push footer down */
+        flex: 1;
         display: flex;
         flex-direction: column;
       }
-
-      /* HEADER */
       .van-header {
         text-align: center;
         padding: 30px 20px;
@@ -69,14 +65,12 @@
         border-radius: 5px;
         text-decoration: none;
       }
-
-      /* VAN CONTAINER */
       .van-container {
         width: 100%;
         max-width: 1100px;
         margin: 0 auto;
         padding: 20px;
-        flex: 1 0 auto; /* ensures main expands even if JS hasn't loaded content yet */
+        flex: 1 0 auto;
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -129,7 +123,6 @@
         text-align: center;
       }
 
-      /* FOOTER */
       footer {
         background: #3a4859;
         color: white;
@@ -153,8 +146,6 @@
         padding-top: 20px;
         border-top: 1px solid #444;
       }
-
-      /* RESPONSIVE */
       @media (max-width: 900px) {
         .van-details {
           flex-direction: column;

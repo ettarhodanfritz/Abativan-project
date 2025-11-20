@@ -1,6 +1,5 @@
 const vanContainer = document.getElementById("van-container");
 
-// Get the van id from the URL
 const vanId = new URLSearchParams(window.location.search).get("id");
 const van = vans.find((v) => v.id == vanId);
 

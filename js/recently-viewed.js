@@ -1,4 +1,3 @@
-// Simulated recently viewed vehicles
 const recentVehicles = [
   {
     name: "2024 Ford Transit 150",
@@ -38,10 +37,8 @@ const recentVehicles = [
   },
 ];
 
-// Get container
 const container = document.getElementById("recentCards");
 
-// Render all vehicles
 recentVehicles.forEach((v) => {
   const card = document.createElement("div");
   card.className = "card";

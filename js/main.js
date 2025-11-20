@@ -443,22 +443,18 @@ const vans = [
   },
 ];
 
-/* ======= Populate filters based on your array ======= */
 function populateFiltersFromData(vansArray) {
   if (!Array.isArray(vansArray)) return;
 
-  // ===== Years from 2014 to 2025 =====
   const years = [];
   for (let y = 2014; y <= 2025; y++) years.push(y);
 
-  // ===== Colors from your array =====
   const colorSet = new Set();
   vansArray.forEach((v) => {
     if (v.color) colorSet.add(v.color.trim());
   });
   const colors = Array.from(colorSet).sort();
 
-  // ===== Models from your array =====
   const modelSet = new Set();
   vansArray.forEach((v) => {
     if (v.model) modelSet.add(v.model.trim());
@@ -482,10 +478,8 @@ function populateFiltersFromData(vansArray) {
   populateSelect("modelFilter", models);
 }
 
-// Call this after your vans array is defined
 populateFiltersFromData(vans);
 
-/* ======= APPLY FILTER FUNCTION (only one!) ======= */
 function applyFilters() {
   const color = document
     .getElementById("colorFilter")
@@ -515,9 +509,9 @@ function applyFilters() {
 }
 
 /* ===== PAGINATION VARIABLES ===== */
-let itemsPerPage = 4; // number of vans per page
-let currentPage = 1; // current page
-let filteredVans = vans; // filtered array
+let itemsPerPage = 4;
+let currentPage = 1;
+let filteredVans = vans;
 
 function renderVans(vanArray, page = 1) {
   const container = document.getElementById("inventory-container");
@@ -548,7 +542,6 @@ function renderVans(vanArray, page = 1) {
   </div>
 `;
 
-    // ✅ Make the entire card clickable
     card.addEventListener("click", () => {
       window.location.href = `van-details.html?id=${van.id}`;
     });

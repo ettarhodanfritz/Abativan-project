@@ -48,7 +48,6 @@ nav .logo img {
   border-radius: 4px;
 }
 
-/* Fix dropdown parent */
 .dropdown {
   position: relative;
 }
@@ -66,19 +65,15 @@ nav .logo img {
   min-width: 300px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 
-  /* 1 column layout */
   display: block;
   z-index: 999;
 }
 .dropdown-menu li {
   list-style: none;
 }
-/* Show on hover */
 .dropdown:hover .dropdown-menu {
   display: grid !important;
 }
-
-/* Links inside dropdown */
 .dropdown-menu li a {
   color: #333;
   padding: 8px 0;
@@ -127,7 +122,6 @@ nav .logo img {
   background-color: #357abd;
 }
 
-/* Featured Section */
 .featured {
   padding: 40px 20px;
   text-align: center;
@@ -140,11 +134,11 @@ nav .logo img {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(330px, 1fr)); /* 2 cards per row */
+  grid-template-columns: repeat(2, minmax(330px, 1fr));
   gap: 30px;
   width: 100%;
-  max-width: 1100px; /* keeps layout centered and clean */
-  margin: 0 auto; /* center the whole grid */
+  max-width: 1100px;
+  margin: 0 auto;
   justify-content: center;
   justify-items: center;
 }
@@ -335,19 +329,18 @@ h2 {
   color: #fff;
 }
 
-/* Why Choose Abativan Section */
 .info-section {
-  display: flex; /* Keep items in a row */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  justify-content: center; /* Center the boxes horizontally */
-  gap: 20px; /* Space between boxes */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 40px 20px;
   background-color: #f9f9f9;
 }
 
 .info-box {
-  flex: 1 1 220px; /* Flexible width, min 220px */
-  max-width: 250px; /* Prevent boxes from being too wide */
+  flex: 1 1 220px;
+  max-width: 250px;
   background-color: #ffffff;
   text-align: center;
   padding: 20px;
@@ -357,12 +350,12 @@ h2 {
 }
 
 .info-box:hover {
-  transform: translateY(-5px); /* Slight hover effect */
+  transform: translateY(-5px);
 }
 
 .info-box img {
   width: 50px;
-  height: 50px; /* Keep icons square */
+  height: 50px;
   object-fit: contain;
   margin-bottom: 10px;
 }
@@ -418,7 +411,6 @@ h2 {
   .dropdown:hover .dropdown-menu {
     display: block !important;
   }
-  /* Navbar stack */
   nav {
     flex-direction: column;
     align-items: flex-start;
@@ -434,8 +426,6 @@ h2 {
     flex-direction: column;
     gap: 10px;
   }
-
-  /* Hero adjustments */
   .hero {
     height: 300px;
     padding: 0 10px;
@@ -449,7 +439,6 @@ h2 {
     font-size: 1em;
   }
 
-  /* Cards, testimonials, info sections stack */
   .cards {
     display: grid;
     grid-template-columns: 1fr;
@@ -489,8 +478,6 @@ h2 {
     width: 90%;
     max-width: 300px;
   }
-
-  /* Dropdown menu stack */
   .dropdown-menu {
     grid-template-columns: 1fr;
     min-width: 200px;
@@ -533,7 +520,7 @@ h2 {
   }
 }
 
-/* Optional: small tweaks for very large screens */
+/* small tweaks for very large screens */
 @media (min-width: 1440px) {
   .cards,
   .testimonial-cards,
@@ -550,19 +537,19 @@ h2 {
 
 .newsletter {
   padding: 50px 20px;
-  text-align: center; /* center-align content */
-  margin-bottom: 50px; /* space before footer */
-  max-width: 600px; /* optional: limit width */
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 600px;
 }
 
 .newsletter form {
   display: flex;
-  gap: 10px; /* space between input and button */
-  flex-wrap: wrap; /* ensures it wraps nicely on small screens */
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .newsletter input {
-  flex: 1; /* input takes remaining space */
+  flex: 1;
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -591,23 +578,23 @@ h2 {
 }
 .newsletter {
   padding: 50px 20px;
-  text-align: center; /* center heading and content */
-  margin: 0 auto 50px; /* horizontally center the section */
-  max-width: 600px; /* optional: keeps it from being too wide */
+  text-align: center;
+  margin: 0 auto 50px;
+  max-width: 600px;
 }
 
 .newsletter form {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: center; /* center input and button in the row */
+  justify-content: center;
 }
 
 .newsletter input,
 .newsletter button {
-  flex: none; /* stop flex-grow */
-  width: auto; /* let them take natural size */
-  min-width: 200px; /* optional: prevent too small */
+  flex: none;
+  width: auto;
+  min-width: 200px;
 }
 
 .page-title {
@@ -618,12 +605,12 @@ h2 {
 .page-title h1 {
   font-size: 2.5em;
   margin-bottom: 15px;
-  color: #3a4859; /* optional, matches your theme */
+  color: #3a4859;
 }
 
 .page-title p {
   font-size: 1.2em;
   color: #555;
-  max-width: 700px; /* optional, limits paragraph width */
-  margin: 0 auto; /* centers the paragraph */
+  max-width: 700px;
+  margin: 0 auto;
 }

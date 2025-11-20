@@ -26,7 +26,6 @@ const topRatedVehicles = [
   },
 ];
 
-// Render cards
 const container = document.getElementById("top-rated-cards");
 
 topRatedVehicles.forEach((vehicle) => {

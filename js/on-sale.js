@@ -42,10 +42,9 @@ const vehicles = [
   },
 ];
 
-// Get container
+
 const container = document.getElementById("onSaleCards");
 
-// Render only vehicles with onSale = true
 vehicles
   .filter((v) => v.onSale)
   .forEach((v) => {
