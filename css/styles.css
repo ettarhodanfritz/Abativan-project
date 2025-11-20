@@ -389,19 +389,26 @@ h2 {
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-    margin-bottom: 10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001; /* stays on top of menu */
+    margin: 0; /* remove margin-bottom */
   }
 
   /* Hide menu on mobile by default */
   .navbar {
     display: none;
-    width: 100%;
     flex-direction: column;
-    gap: 10px;
+    position: absolute; /* overlay menu */
+    top: 60px; /* distance from hamburger/logo */
+    right: 0;
     background-color: #3a4859;
+    width: 200px; /* menu width */
     padding: 10px 0;
+    border-radius: 0 0 8px 8px; /* rounded bottom corners */
+    z-index: 1000;
   }
-
   /* Show menu when active */
   .navbar.active {
     display: flex;
@@ -416,15 +423,30 @@ h2 {
   .dropdown:hover .dropdown-menu {
     display: block !important;
   }
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
 
   nav .logo img {
     height: 70px;
-    margin-bottom: 10px;
+    margin: 0; /* remove bottom margin */
+  }
+  nav {
+    flex-direction: row; /* keep horizontal */
+    justify-content: space-between; /* logo left, hamburger right */
+    align-items: center;
+    padding: 10px 20px;
+    position: relative; /* for absolute menu */
+  }
+
+  nav .logo {
+    order: 1; /* logo stays left */
+  }
+
+  nav .hamburger {
+    order: 2; /* hamburger goes right */
+    display: block;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001; /* stays above menu */
   }
 
   .navbar {
