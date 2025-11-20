@@ -6,7 +6,6 @@
     <title>Abativan Inventory</title>
     <link rel="stylesheet" href="css/styles.css" />
     <style>
-
       .inventory-filters {
         background-color: #fff;
         padding: 15px 20px;
@@ -80,7 +79,6 @@
       }
 
       .inventory-grid .cards > * {
-        
         max-width: 420px;
         width: 100%;
       }
@@ -178,6 +176,7 @@
         nav {
           flex-direction: column;
           gap: 10px;
+          align-items: flex-start;
         }
         .inventory-filters {
           padding: 10px;
@@ -206,6 +205,13 @@
         .pagination button {
           padding: 5px 10px;
         }
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between; /* logo left, menu right */
+        align-items: center;
+        padding: 10px 20px;
       }
     </style>
   </head>
@@ -321,9 +327,7 @@
       </div>
 
       <!-- Pagination -->
-      <div class="pagination" id="pagination">
-        
-      </div>
+      <div class="pagination" id="pagination"></div>
     </section>
 
     <!-- Inventory Info Section -->
