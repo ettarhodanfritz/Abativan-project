@@ -645,29 +645,6 @@ h2 {
   width: 100%;
 }
 
-@media (max-width: 480px) {
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .inventory-filters {
-    padding: 10px;
-    gap: 10px;
-  }
-
-  .inventory-grid .cards {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    justify-items: center;
-  }
-
-  .inventory-grid .cards > * {
-    width: 90%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-}
-
 @media (max-width: 768px) {
   .inventory-grid .cards {
     grid-template-columns: 1fr;
