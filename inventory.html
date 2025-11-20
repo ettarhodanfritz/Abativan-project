@@ -71,16 +71,19 @@
       }
 
       .inventory-grid .cards {
-        display: flex; /* flexbox like homepage */
-        flex-wrap: wrap; /* allow wrapping */
-        gap: 20px; /* space between cards */
-        justify-content: center; /* center all cards horizontally */
+        display: grid; /* flexbox like homepage */
+        gap: 30px; /* space between cards */
+        justify-items: center; /* center all cards horizontally */
+        grid-template-columns: repeat(2, minmax(330px, 1fr));
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
       }
 
       .inventory-grid .cards > * {
-        width: 250px; /* fixed width like homepage cards */
-        max-width: 100%; /* responsive if screen is smaller */
-        margin: 0 auto; /* center each card individually */
+        /* fixed width like homepage cards */
+        max-width: 420px; /* responsive if screen is smaller */
+        width: 100%;
       }
       /* Pagination */
       .pagination {
@@ -156,8 +159,18 @@
 
       @media (max-width: 768px) {
         .inventory-grid .cards {
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          grid-template-columns: 1fr;
+          gap: 20px;
+          width: 100%;
+          justify-items: center;
         }
+
+        .inventory-grid .cards > * {
+          width: 90%;
+          max-width: 350px;
+          margin: 0 auto;
+        }
+
         .inventory-info {
           padding: 10px 15px;
         }

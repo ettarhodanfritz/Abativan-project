@@ -54,8 +54,9 @@
       </p>
 
       <form
-        action="#"
-        method="post"
+        class="newsletter-form"
+        action="/subscribe"
+        method="POST"
         style="
           margin-top: 20px;
           display: flex;
@@ -66,6 +67,7 @@
       >
         <input
           type="email"
+          name="email"
           placeholder="Enter your email"
           required
           style="padding: 10px; border-radius: 5px; border: 1px solid #ccc"
@@ -132,4 +134,5 @@
       <p>&copy; 2025 Abativan. All rights reserved.</p>
     </div>
   </footer>
+  <script src="js/form-validation.js"></script>
 </html>
