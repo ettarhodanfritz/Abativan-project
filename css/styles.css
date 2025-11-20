@@ -126,11 +126,17 @@ nav .logo img {
   text-align: center;
 }
 
-.featured h1 {
+.inventory-grid h1 {
   margin-bottom: 30px;
   color: #3a4859;
+  text-align: center;
 }
 
+.inventory-grid h2 {
+  margin-bottom: 30px;
+  color: #3a4859;
+  text-align: center;
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(330px, 1fr));
